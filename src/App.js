@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import "./App.css";
+import { Navbar, Footer, Sidebar, ThemeSettings } from "./components"; 
+import { Home,Liquidity,Queue,Swap } from "./pages";
 
 const App = () => {
   const activeMenu = true;
@@ -24,7 +26,7 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
-              SideBar
+              <Sidebar/>
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">SideBar w-o</div>
@@ -37,17 +39,17 @@ const App = () => {
               className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar 
                                      w-full "
             >
-              SideBar
+                 <Sidebar/>
             </div>
                   </div>
                   <div>
                       <Routes>
                        
-                          <Route path="/" element="Accueil" />
-                          <Route path="/home" element="Accueil" />
-                          <Route path="/swap" element="Echanger" />
-                          <Route path="/liquidity" element="Liquidité" />
-                          <Route path="/queue" element="File d'attente"/>
+                          <Route path="/" element={<Home/> } />
+                          <Route path="/home" element={<Home/> }/>
+                          <Route path="/swap" element={<Swap/>} />
+                          <Route path="/liquidity" element={<Liquidity/>} />
+                          <Route path="/queue" element={ <Queue/> } />
                       </Routes>
                   </div>
         </div>
