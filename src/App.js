@@ -39,7 +39,7 @@ const App = () => {
               className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar 
                                      w-full "
             >
-                 {/* <Sidebar/> */}
+                 <Navbar/>
             </div>
                   </div>
                   <div>
